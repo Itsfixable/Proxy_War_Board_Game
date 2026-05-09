@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(185, 28, 28, 0.35), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.35), transparent 30%),
+    #0f172a;
+  color: white;
+  font-family: "Elms Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app {
+  width: min(1200px, 94%);
+  margin: auto;
+  padding: 32px 0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.badge {
+  color: #facc15;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+h1 {
+  font-size: clamp(36px, 7vw, 72px);
+  margin: 10px 0;
+
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #cbd5e1;
+  max-width: 760px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.role {
+  cursor: pointer;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.role:hover {
+  transform: translateY(-6px);
+  border-color: #facc15;
+}
+
+.flag {
+  font-size: 52px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+}
+
+.scoreBox {
+  display: grid;
+  gap: 18px;
+}
+
+.scoreName {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.bar {
+  height: 14px;
+  background: #020617;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* .fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: 0.3s;
+} */
+
+
+
+.green { background: #22c55e; }
+.blue { background: #3b82f6; }
+.yellow { background: #facc15; }
+
+.note {
+  color: #facc15;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.space {
+  min-height: 78px;
+  background: #020617;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 10px;
+  color: #cbd5e1;
+  font-size: 13px;
+  position: relative;
+}
+
+.active {
+  background: linear-gradient(135deg, #991b1b, #1d4ed8);
+  color: white;
+  border-color: #facc15;
+}
+
+.token {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: #facc15;
+  color: #111827;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+.event h2 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.event p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.meaning {
+  border-left: 4px solid #facc15;
+  padding-left: 14px;
+  font-style: italic;
+}
+
+.buttons {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 15px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #facc15;
+  color: #111827;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background: #e2e8f0;
+}
+
+.finalScore {
+  font-size: 36px;
+  color: #facc15;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .roles,
+  .game {
+    grid-template-columns: 1fr;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flag img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.roleTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.smallFlag {
+  width: 52px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.endingCard {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.endingStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.endingStats div {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.endingStats span {
+  display: block;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.endingStats strong {
+  color: #facc15;
+  font-size: 24px;
+}
+
+.endingText {
+  border-left: 4px solid #facc15;
+  padding-left: 16px;
+  color: #e2e8f0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .endingStats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+
+} 
