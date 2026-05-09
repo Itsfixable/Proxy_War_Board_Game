@@ -18,21 +18,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./vietnam-war-board-game
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: ./vietnam-war-board-game/package-lock.json
 
       - name: Install dependencies
-        working-directory: ./vietnam-war-board-game
         run: npm install
 
       - name: Build website
-        working-directory: ./vietnam-war-board-game
         run: npm run build
 
       - name: Upload built website
